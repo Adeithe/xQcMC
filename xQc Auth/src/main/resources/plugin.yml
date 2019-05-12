@@ -1,0 +1,6 @@
+name: xQc-Auth
+version: 1.0.0
+author: Adeithe
+main: gg.xqc.auth.SpigotPlugin
+api-version: 1.13
+depend: [xQc-Core]

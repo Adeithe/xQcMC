@@ -1,0 +1,5 @@
+name: xQc-Waterfall
+version: 1.0.0
+author: Adeithe
+main: gg.xqc.waterfall.BungeePlugin
+depend: [xQc-Core]

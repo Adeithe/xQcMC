@@ -1,0 +1,11 @@
+Authentication:
+  Messages:
+    code-generated: Your authentication code is &c${Token}
+    http-error: Unable to get your authentication code! Please try again later.
+    unknown-error: Please contact a server administrator.
+
+API:
+  Headers:
+    Authorization: ${ENV.Authorization}
+  Endpoints:
+    Authenticate: https://example.com/api/minecraft/authenticate

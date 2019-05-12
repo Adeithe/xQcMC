@@ -1,0 +1,11 @@
+Whitelist:
+  Enabled: false
+  Messages:
+    not-whitelisted: You are not on the server whitelist, ${NAME}
+    http-error: Something went wrong while authenticating! Please contact a server administrator.
+
+API:
+  Headers:
+    Authorization: ${ENV.Authorization}
+  Endpoints:
+    Validate: https://example.com/api/minecraft/login/validate/${UUID}

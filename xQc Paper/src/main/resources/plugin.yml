@@ -1,0 +1,6 @@
+name: xQc-Paper
+version: 1.0.0
+author: Adeithe
+main: gg.xqc.paper.PaperPlugin
+api-version: 1.13
+depend: [xQc-Core]

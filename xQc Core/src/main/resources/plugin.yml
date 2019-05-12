@@ -1,0 +1,5 @@
+name: xQc-Core
+version: 1.0.0
+author: Adeithe
+main: gg.xqc.core.Spigot
+api-version: 1.13
