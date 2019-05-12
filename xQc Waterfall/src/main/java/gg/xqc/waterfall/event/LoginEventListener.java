@@ -7,7 +7,6 @@ import gg.xqc.core.http.HttpResponse;
 import gg.xqc.waterfall.BungeePlugin;
 import gg.xqc.waterfall.obj.WhitelistResponse;
 import net.md_5.bungee.api.ChatColor;
-import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.event.PostLoginEvent;
 import net.md_5.bungee.api.plugin.Listener;

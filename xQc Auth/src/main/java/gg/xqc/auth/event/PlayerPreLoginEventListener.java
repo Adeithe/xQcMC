@@ -16,7 +16,6 @@ import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.util.HashMap;
 
 public class PlayerPreLoginEventListener implements Listener {
 	private SpigotPlugin Plugin;
