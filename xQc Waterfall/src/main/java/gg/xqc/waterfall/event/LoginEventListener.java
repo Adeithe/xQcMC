@@ -57,10 +57,10 @@ public class LoginEventListener implements Listener {
 		}
 	}
 	
-	private BaseComponent[] getReason() { return getReason(Plugin.config.getString("Whitelist.Messages.http-error", "No reason")); }
-	private BaseComponent[] getReason(String reason) {
+	private TextComponent getReason() { return getReason(Plugin.config.getString("Whitelist.Messages.http-error", "No reason")); }
+	private TextComponent getReason(String reason) {
 		if(reason == null) reason = "No reason provided.";
 		reason = ChatColor.translateAlternateColorCodes('&', reason);
-		return TextComponent.fromLegacyText(reason);
+		return new TextComponent(reason);
 	}
 }
