@@ -17,7 +17,7 @@ public class SpigotPlugin extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		if(getServer().getPluginManager().getPlugin("xQc-Core") == null) {
-			getLogger().severe("xQc Core is required for xQc Waterfall to run!");
+			getLogger().severe("xQc Core is required for xQc Auth to run!");
 			getPluginLoader().disablePlugin(this);
 			return;
 		}
