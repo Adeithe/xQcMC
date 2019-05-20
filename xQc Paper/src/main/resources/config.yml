@@ -1,1 +1,6 @@
-disable-hunger: false
+Player:
+  hunger: true
+
+Creatures:
+  require-spawners: false
+  allow-ai: true

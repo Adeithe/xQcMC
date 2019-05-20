@@ -6,14 +6,14 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 
-public class FoodLevelChangeEventListener implements Listener {
+public class PlayerEventListener implements Listener {
 	private PaperPlugin Plugin;
 	
-	public FoodLevelChangeEventListener(PaperPlugin plugin) { this.Plugin = plugin; }
+	public PlayerEventListener(PaperPlugin plugin) { this.Plugin = plugin; }
 	
 	@EventHandler(priority = EventPriority.NORMAL)
 	public void onFoodLevelChange(FoodLevelChangeEvent event) {
-		if(Plugin.config.getBoolean("disable-hunger", false)) {
+		if(!Plugin.config.getBoolean("Player.hunger", true)) {
 			if(event.getFoodLevel() < 20)
 				event.setFoodLevel(20);
 			event.setCancelled(true);

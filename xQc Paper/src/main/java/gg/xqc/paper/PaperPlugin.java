@@ -1,6 +1,7 @@
 package gg.xqc.paper;
 
-import gg.xqc.paper.event.FoodLevelChangeEventListener;
+import gg.xqc.paper.event.MobEventListener;
+import gg.xqc.paper.event.PlayerEventListener;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -35,7 +36,8 @@ public class PaperPlugin extends JavaPlugin {
 		
 		this.config = getConfig();
 		
-		getServer().getPluginManager().registerEvents(new FoodLevelChangeEventListener(this), this);
+		getServer().getPluginManager().registerEvents(new PlayerEventListener(this), this);
+		getServer().getPluginManager().registerEvents(new MobEventListener(this), this);
 	}
 	
 	@Override
