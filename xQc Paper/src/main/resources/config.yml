@@ -1,6 +1,10 @@
-Player:
-  hunger: true
+enabled: true
+max-distance: 250.0
 
-Creatures:
-  require-spawners: false
-  allow-ai: true
+Event:
+  interval: 900
+  duration: 600
+  chance-in-percent: 15
+  Enabled:
+    spleef: true
+    snowball-fight: true

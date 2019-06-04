@@ -1,4 +1,4 @@
-package gg.xqc.paper.event;
+package gg.xqc.paper.event.spigot;
 
 import gg.xqc.paper.PaperPlugin;
 import org.bukkit.event.EventHandler;

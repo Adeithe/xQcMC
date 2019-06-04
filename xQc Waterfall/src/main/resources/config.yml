@@ -1,8 +1,11 @@
+max-players: -1
+
 Whitelist:
   Enabled: false
   Messages:
     not-whitelisted: You are not on the server whitelist, ${NAME}
     http-error: Something went wrong while authenticating! Please contact a server administrator.
+    server-full: Server full!
 
 API:
   Headers:

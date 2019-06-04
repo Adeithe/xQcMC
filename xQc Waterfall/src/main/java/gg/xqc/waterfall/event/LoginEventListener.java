@@ -8,6 +8,7 @@ import gg.xqc.waterfall.BungeePlugin;
 import gg.xqc.waterfall.obj.WhitelistResponse;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.TextComponent;
+import net.md_5.bungee.api.config.ListenerInfo;
 import net.md_5.bungee.api.event.PostLoginEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.config.Configuration;
@@ -48,9 +49,22 @@ public class LoginEventListener implements Listener {
 				if(!whitelist.error.code.equalsIgnoreCase("user_not_whitelisted"))
 					reason = whitelist.error.message;
 				event.getPlayer().disconnect(getReason(reason));
-			} else if(response.getStatusCode() != 200 || !whitelist.isSuccess)
+				return;
+			} else if(response.getStatusCode() != 200 || !whitelist.isSuccess) {
 				event.getPlayer().disconnect(getReason());
-		} catch(IOException e) {
+				return;
+			}
+			if(whitelist.data.type.getLevel() < WhitelistResponse.Data.Type.STREAMER.getLevel()) {
+				Plugin.getLogger().warning(event.getPlayer().getName() +" is not allowed to bypass player limit!");
+				ListenerInfo listener = event.getPlayer().getPendingConnection().getListener();
+				int players = Plugin.getProxy().getOnlineCount();
+				int maxPlayers = Plugin.config.getInt("max-players", listener.getMaxPlayers());
+				if(maxPlayers < 0) maxPlayers = listener.getMaxPlayers();
+				Plugin.getLogger().info("Current PlayerCount: "+ players +"/"+ maxPlayers);
+				if(maxPlayers > 0 && maxPlayers < players)
+					event.getPlayer().disconnect(new TextComponent(Plugin.config.getString("Whitelist.Messages.server-full", "Server full!")));
+			}
+		} catch(Exception e) {
 			e.printStackTrace();
 			event.getPlayer().disconnect(getReason());
 		}
